@@ -1,0 +1,17 @@
+<div style="padding:18px">
+    <div class="mdui-card" ng-repeat="item in flowers" style="float:left;width: 235px;height: 330px; margin:20px;">
+        <div class="mdui-card-media">
+            <img src="{{item.fpic}}" />
+        </div>
+        <div class="mdui-card-actions mdui-card-actions-stacked">
+            <a link style="font-size:15px;width:235px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{item.fname}}</a>
+            <button class="mdui-btn mdui-ripple">{{item.price}}￥</button>
+        </div>
+    </div>
+    <div style="padding-left:150px;margin: 0 auto;display: table-cell">
+        <uib-pagination style="margin:0 auto;padding: 0px;" items-per-page="perPageNo" total-items="totalNo"
+            ng-model="pageNo" max-size="maxSize" class="pagination-sm" boundary-links="true" force-ellipses="true"
+            ng-change="pageChanged(pageNo)" first-text="第一页" previous-text="上一页" next-text="下一页" last-text="最后页">
+        </uib-pagination>
+    </div>
+</div>

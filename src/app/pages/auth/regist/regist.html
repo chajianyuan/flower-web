@@ -1,0 +1,201 @@
+<div class="htmleaf-container" ng-controller="LoginController">
+    <div class="panel-lite">
+        <div class="thumbur">
+            <div class="icon-lock"></div>
+        </div>
+        <h4>用户注册</h4>
+
+        <div class="mdui-textfield">
+            <i class="mdui-icon material-icons">account_circle</i>
+            <input class="mdui-textfield-input" type="text" placeholder="用户名" name="username" ng-model="user.username" required/>
+            <div class="mdui-textfield-error">用户名不能为空</div>
+        </div>
+
+        <div class="mdui-textfield">
+            <i class="mdui-icon material-icons">&#xe897;</i>
+            <input class="mdui-textfield-input" type="password" placeholder="密码" name="password" pattern="(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,20}$"
+                ng-model="user.password" required/>
+            <div class="mdui-textfield-error">密码为 6~20位字符，至少包含数字.字母.符号中的2种 </div>
+        </div>
+
+        <div class="mdui-textfield">
+            <i class="mdui-icon material-icons">&#xe0be;</i>
+            <input class="mdui-textfield-input" type="email" placeholder="邮箱" name="email" ng-model="user.email" required/>
+            <div class="mdui-textfield-error">邮箱格式错误</div>
+        </div>
+
+        <div class="mdui-textfield">
+            <i class="mdui-icon material-icons">&#xe0cd;</i>
+            <input class="mdui-textfield-input" type="text" placeholder="手机号" pattern="^1\d{10}$" name="telephone" ng-model="user.telephone"/>
+            <div class="mdui-textfield-error">手机号长度为11位有效数字</div>
+        </div>
+        <a href="" ui-sref="base.home.login">已有账号 </a>
+        <a href="" ui-sref="base.home.home" style="float: right;">返回首页 </a>
+        
+        <button class="floating-btn" ng-click="regist(user)">
+            <i class="icon-arrow"></i>
+        </button>
+    </div>
+</div>
+
+<style>
+    .htmleaf-container {
+        background: url('../../../../assets/images/home.jpg')
+    }
+
+    .thumbur {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        background-image: linear-gradient(to right, #efefef 0%, #efefef 50%, #e1e1e1 50%, #e1e1e1 100%);
+        margin: auto;
+        border-radius: 100%;
+    }
+
+    .thumbur:before {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 12px;
+        background-color: #efefef;
+        left: 50%;
+        bottom: 50px;
+        z-index: 5;
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+
+    .icon-lock {
+        position: relative;
+        width: 80px;
+        height: 60px;
+        background: #FFA000;
+        margin: auto;
+        -ms-transform: translateY(60px);
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+        border-radius: 8px;
+        box-shadow: 0 0 2px #F57C00 inset;
+    }
+
+    .icon-lock:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 35px;
+        border: 9px solid #F57C00;
+        border-bottom: none;
+        bottom: 100%;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    .icon-lock:before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: #efefef;
+        left: 50%;
+        top: 20px;
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-radius: 100%;
+    }
+
+    .panel-lite {
+        margin: 0px auto;
+        max-width: 450px;
+        background: #fff;
+        padding: 40px 20px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        position: relative;
+        opacity: 0.9;
+    }
+
+    .panel-lite h4 {
+        font-weight: 400;
+        font-size: 24px;
+        text-align: center;
+        color: #ff4081;
+        margin: 15px auto
+    }
+
+    .panel-lite a {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        color: #ff4081;
+        font-size: 14px;
+    }
+
+    .floating-btn {
+        background: #ff4081;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 32px;
+        border: none;
+        position: absolute;
+        margin: auto;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.3) inset;
+        right: -30px;
+        bottom: 90px;
+        cursor: pointer;
+    }
+
+    .floating-btn:hover {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 5px 11px rgba(0, 0, 0, 0.23);
+    }
+
+    .floating-btn:hover .icon-arrow {
+        -ms-transform: rotate(45deg) scale(1.2);
+        -webkit-transform: rotate(45deg) scale(1.2);
+        transform: rotate(45deg) scale(1.2)
+    }
+
+    .floating-btn:focus,
+    .floating-btn:active {
+        outline: none;
+    }
+
+    .icon-arrow {
+        position: relative;
+        width: 13px;
+        height: 13px;
+        border-right: 3px solid #fff;
+        border-top: 3px solid #fff;
+        display: block;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin: auto;
+        -webkit-transition: 0.3s;
+        transition: 0.3s
+    }
+
+    .icon-arrow:after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 3px;
+        background: #fff;
+        left: -5px;
+        top: 5px;
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+</style>

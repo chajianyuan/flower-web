@@ -1,0 +1,311 @@
+<div>
+  <!-- 第一部分 轮播图 -->
+  <div class="slider" id="slider">
+    <div class="slider-inner">
+      <div class="item">
+        <span id="span">HUAYU</span>
+        <img class="img" style="background: url('../../../../assets/images/home_flower1.jpg');">
+      </div>
+      <div class="item">
+        <span id="span">HUAYU</span>
+        <img class="img" style="background: url('../../../../assets/images/home_flower2.jpeg');">
+      </div>
+      <div class="item">
+        <span id="span">HUAYU</span>
+        <img class="img" style="background: url('../../../../assets/images/home_flower3.jpg');">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main" style="width: 100%">
+    <!-- 第二部分 -->
+    <div class="second">
+      <div class="left">
+        <div style="width: 100%;height: 98%;">
+          <img src="../../../../assets/images/home_flower4.jpg" alt="" style="height: 100%;width: 100%">
+        </div>
+      </div>
+      <div class="right">
+        <div style="width: 100%;height: 98%;">
+          <img src="../../../../assets/images/home_flower5.jpg" alt="" style="height: 100%;width: 100%">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 第三部分 今日上新 -->
+  <div class="new" style="height: 600px;">
+
+    <div>
+      <span style="font-size: 20px;font-family: FangSong_GB2312;float: left;">今日上新</span>&nbsp;
+      <span style="color: lightgray;font-family: STXinwei;font-size: 17px;">New product</span>
+      <!-- <button class="mdui-btn mdui-btn-raised mdui-ripple" style="float: right;">+查看更多</button> -->
+      <div class="mdui-divider-dark"></div>
+      <div style="padding:20px">
+        <div class="mdui-card" ng-repeat="item in newflower" style="float:left;width: 235px;height: 330px; margin:20px;">
+          <div class="mdui-card-media">
+            <img src="{{item.fpic}}" />
+          </div>
+          <div class="mdui-card-actions mdui-card-actions-stacked">
+            <a link style="font-size:15px;width:235px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{item.fname}}</a>
+            <button class="mdui-btn mdui-ripple">{{item.price}}￥</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第四部分 送长辈鲜花 -->
+  <div class="olderflower" style="height: 850px;" ng-model="elderflower">
+    <div>
+      <span style="font-size: 20px;font-family: FangSong_GB2312;float: left;">送长辈鲜花</span>&nbsp;
+      <span style="color: lightgray;font-family: STXinwei;font-size: 17px;">Send elders flowers</span>
+      <input type="button" style="float: right;width: 100px;height: 25px;" ng-click="findflower('送长辈鲜花')" value="+查看更多">
+      <div class="mdui-divider-dark"></div>
+      <div style="padding:18px">
+        <div class="mdui-card" ng-repeat="item in ftype1" style="float:left;width: 235px;height: 330px; margin:20px;">
+          <div class="mdui-card-media">
+            <img src="{{item.fpic}}" />
+          </div>
+          <div class="mdui-card-actions mdui-card-actions-stacked">
+            <a link style="font-size:15px;width:235px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{item.fname}}</a>
+            <button class="mdui-btn mdui-ripple">{{item.price}}￥</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第五部分 爱情鲜花 -->
+  <div class="loveflower" style="height: 850px;" ng-model="loveflower">
+    <div>
+      <span style="font-size: 20px;font-family: FangSong_GB2312;float: left;">爱情鲜花</span>&nbsp;
+      <span style="color: lightgray;font-family: STXinwei;font-size: 17px;">Love flowers</span>
+      <input type="button" style="float: right;width: 100px;height: 25px;" ng-click="findflower('爱情鲜花')" value="+查看更多">
+      <div class="mdui-divider-dark"></div>
+      <div style="padding:18px">
+        <div class="mdui-card" ng-repeat="item in ftype2" style="float:left;width: 235px;height: 330px; margin:20px;">
+          <div class="mdui-card-media">
+            <img src="{{item.fpic}}" />
+          </div>
+          <div class="mdui-card-actions mdui-card-actions-stacked">
+            <a link style="font-size:15px;width:235px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{item.fname}}</a>
+            <button class="mdui-btn mdui-ripple">{{item.price}}￥</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第六部分 永生花 -->
+  <div class="immortalflower" style="height: 850px;" ng-model="immortalflower">
+    <div>
+      <span style="font-size: 20px;font-family: FangSong_GB2312;float: left;">永生花</span>&nbsp;
+      <span style="color: lightgray;font-family: STXinwei;font-size: 17px;">Immortal flower</span>
+      <input type="button" style="float: right;width: 100px;height: 25px;" ng-click="findflower('永生花')" value="+查看更多">
+      <div class="mdui-divider-dark"></div>
+      <div style="padding:18px">
+        <div class="mdui-card" ng-repeat="item in ftype3" style="float:left;width: 235px;height: 330px; margin:20px;">
+          <div class="mdui-card-media">
+            <img src="{{item.fpic}}" />
+          </div>
+          <div class="mdui-card-actions mdui-card-actions-stacked">
+            <a link style="font-size:15px;width:235px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{item.fname}}</a>
+            <button class="mdui-btn mdui-ripple">{{item.price}}￥</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第七部分 礼品 -->
+  <div class="gift" style="height: 850px;" ng-model="gift">
+    <div>
+      <span style="font-size: 20px;font-family: FangSong_GB2312;float: left;">礼品</span>&nbsp;
+      <span style="color: lightgray;font-family: STXinwei;font-size: 17px;">gift</span>
+      <input type="button" style="float: right;width: 100px;height: 25px;" ng-click="findflower('礼品')" value="+查看更多">
+      <div class="mdui-divider-dark"></div>
+      <div style="padding:18px">
+        <div class="mdui-card" ng-repeat="item in ftype4" style="float:left;width: 235px;height: 330px; margin:20px;">
+          <div class="mdui-card-media">
+            <img src="{{item.fpic}}" />
+          </div>
+          <div class="mdui-card-actions mdui-card-actions-stacked">
+            <a link style="font-size:15px;width:235px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{item.fname}}</a>
+            <button class="mdui-btn mdui-ripple">{{item.price}}￥</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function ($) {
+    $.fn.Slider = function (options) {
+      "use strict";
+
+      var settings = $.extend({
+        isAuto: true,
+        transTime: 4000,
+        animateSpeed: 1000,
+        sliderMode: 'slide', //'slide | fade',
+        pointerControl: true,
+        pointerEvent: 'click',//'hover' | 'click',
+        arrowControl: true,
+      }, options);
+      var interval;
+      var isAnimating = false;
+      var $slider = $(this);
+      var $sliderWrap = $slider.find('.slider-inner');
+      var sliderCount = $sliderWrap.find('> .item').length;
+      var sliderWidth = $slider.width();
+      var currentIndex = 0;
+
+      var sliderFun = {
+        controlInit: function () {
+          // pointerControl
+          if (settings.pointerControl) {
+
+            var html = '';
+            html += '<ol class="slider-pointer">';
+            for (var i = 0; i < sliderCount; i++) {
+              if (i == 0) {
+                html += '<li class="active"></li>'
+              } else {
+                html += '<li></li>'
+              }
+            }
+            html += '</ol>'
+            $slider.append(html);
+            // 指示器居中
+            var $pointer = $slider.find('.slider-pointer');
+            $pointer.css({
+              left: '50%',
+              marginLeft: - $pointer.width() / 2
+            });
+          }
+          // pointerControl
+          if (settings.arrowControl) {
+            var html = "";
+            html += '<span class="slider-control prev">&lt;</span>';
+            html += '<span class="slider-control next">&gt;</span>'
+            $slider.append(html);
+          }
+          $slider.on('click', '.slider-control.prev', function (event) {
+            sliderFun.toggleSlide('prev');
+          });
+          $slider.on('click', '.slider-control.next', function (event) {
+            sliderFun.toggleSlide('next');
+          });
+        },
+        // slider
+        sliderInit: function () {
+          sliderFun.controlInit();
+          // 模式选择
+          if (settings.sliderMode == 'slide') {
+            // slide 模式
+            $sliderWrap.width(sliderWidth * sliderCount);
+            $sliderWrap.children().width(sliderWidth);
+          } else {
+            // mode 模式
+            $sliderWrap.children().css({
+              'position': 'absolute',
+              'left': 0,
+              'top': 0
+            });
+            $sliderWrap.children().first().siblings().hide();
+          }
+          // 控制事件
+          if (settings.pointerEvent == 'hover') {
+            $slider.find('.slider-pointer > li').mouseenter(function (event) {
+              sliderFun.sliderPlay($(this).index());
+            });
+          } else {
+            $slider.find('.slider-pointer > li').click(function (event) {
+              if (currentIndex != $(this).index()) {
+                sliderFun.sliderPlay($(this).index())
+              }
+            });
+          }
+          // 自动播放
+          sliderFun.autoPlay();
+        },
+        // slidePlay
+        sliderPlay: function (index) {
+          sliderFun.stop();
+          isAnimating = true;
+          $sliderWrap.children().first().stop(true, true);
+          $sliderWrap.children().stop(true, true);
+          $slider.find('.slider-pointer').children()
+            .eq(index).addClass('active')
+            .siblings().removeClass('active');
+          if (settings.sliderMode == "slide") {
+            // slide
+            if (index > currentIndex) {
+              $sliderWrap.animate({
+                left: '-=' + Math.abs(index - currentIndex) * sliderWidth + 'px'
+              }, settings.animateSpeed, function () {
+                sliderFun.stop();
+                isAnimating = false;
+                sliderFun.autoPlay()
+              });
+            } else if (index < currentIndex) {
+              $sliderWrap.animate({
+                left: '+=' + Math.abs(index - currentIndex) * sliderWidth + 'px'
+              }, settings.animateSpeed, function () {
+                isAnimating = false;
+                sliderFun.autoPlay();
+              });
+            } else {
+              return;
+            }
+          } else {
+            // fade
+            if ($sliderWrap.children(':visible').index() == index) return;
+            $sliderWrap.children().fadeOut(settings.animateSpeed)
+              .eq(index).fadeIn(settings.animateSpeed, function () {
+                isAnimating = false;
+                sliderFun.autoPlay();
+              });
+          }
+          currentIndex = index;
+        },
+        // toggleSlide
+        toggleSlide: function (arrow) {
+          if (isAnimating) {
+            return;
+          }
+          var index;
+          if (arrow == 'prev') {
+            index = (currentIndex == 0) ? sliderCount - 1 : currentIndex - 1;
+            sliderFun.sliderPlay(index);
+          } else if (arrow == 'next') {
+            index = (currentIndex == sliderCount - 1) ? 0 : currentIndex + 1;
+            sliderFun.sliderPlay(index);
+          }
+        },
+        // autoPlay
+        autoPlay: function () {
+          if (settings.isAuto) {
+            interval = setInterval(function () {
+              var index = currentIndex;
+              (currentIndex == sliderCount - 1) ? index = 0 : index = currentIndex + 1;
+              sliderFun.sliderPlay(index);
+            }, settings.transTime);
+          } else {
+            return;
+          }
+        },
+        //stop
+        stop: function () {
+          clearInterval(interval);
+        },
+      };
+      sliderFun.sliderInit();
+    }
+  })(jQuery);
+  jQuery(document).ready(function ($) {
+    $('#slider').Slider();
+  });
+</script>

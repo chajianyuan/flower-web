@@ -1,0 +1,19 @@
+.first img{
+    width : 100%;
+    height: 300px;
+}
+.alldec{
+    margin-top : 50px;
+    font-family: YouYuan;
+}
+.alldec span{
+    text-align: center;
+    display   : block;
+    font-size : 17px;
+}
+.alldec p{
+    margin-left : 130px;
+    margin-right: 130px;
+    font-size   : 15px;
+}
+
